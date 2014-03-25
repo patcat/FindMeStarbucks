@@ -1,0 +1,18 @@
+{
+  "uuid": "45a09637-d3e2-4da5-b9c4-a2ed8d333965",
+  "shortName": "Find Me Starbucks",
+  "longName": "Find Me Starbucks",
+  "companyName": "Patrick Catanzariti",
+  "versionCode": 1,
+  "versionLabel": "1.0.0",
+  "watchapp": {
+    "watchface": true
+  },
+  "appKeys": {
+    "location": 0
+  },
+  "capabilities": ["location"],
+  "resources": {
+    "media": []
+  }
+}
