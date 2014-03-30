@@ -47,22 +47,6 @@ void sync_error_callback(DictionaryResult dict_error, AppMessageResult app_messa
   APP_LOG(APP_LOG_LEVEL_DEBUG, "... Sync Error: %s", translate_error(app_message_error));
 }
 
-/*static void send_cmd(void) {
-  Tuplet value = TupletInteger(1, 1);
-
-  DictionaryIterator *iter;
-  app_message_outbox_begin(&iter);
-
-  if (iter == NULL) {
-    return;
-  }
-
-  dict_write_tuplet(iter, &value);
-  dict_write_end(iter);
-
-  app_message_outbox_send();
-}*/
-
 static void handle_second_tick(struct tm* tick_time, TimeUnits units_changed) {
   static char time_text[] = "00:00";
 
@@ -115,8 +99,6 @@ static void init_location_search(Window *window) {
 
   app_sync_init(&sync, sync_buffer, sizeof(sync_buffer), initial_values, ARRAY_LENGTH(initial_values),
       sync_tuple_changed_callback, sync_error_callback, NULL);
-
-  //send_cmd(); // Commenting this out as I don't believe it's needed. The weather.c app uses it to send data back to the phone.
 }
 
 static void window_load(Window *window) {
